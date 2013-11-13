@@ -18,17 +18,17 @@ DOTFILES_REPO="git@github.com:healthagentech/dotfiles.git"
 # dotfiles and vim setup
 # -----------------------------------------------------
 
-# make sure we have a ~/.gitconfig
-if [[ -f "~/.gitconfig" ]];
+# make sure we have a ${HOME}/.gitconfig
+if [ -f "${HOME}/.gitconfig" ];
 then
-  echo "Moving ~/.gitconfig to ~/.gitconfig.bak"
-  mv ~/.gitconfig ~/.gitconfig.bak
+  echo "Moving ${HOME}/.gitconfig to ${HOME}/.gitconfig.bak"
+  mv ${HOME}/.gitconfig ${HOME}/.gitconfig.bak
 fi
 
-if [[ -f "~/.gitconfig.local" ]];
+if [ -f "${HOME}/.gitconfig.local" ];
 then
-  echo "Copying ~/.gitconfig.local to ~/.gitconfig"
-  mv ~/.gitconfig.local ~/.gitconfig
+  echo "Copying ${HOME}/.gitconfig.local to ${HOME}/.gitconfig"
+  mv ${HOME}/.gitconfig.local ${HOME}/.gitconfig
 fi
 
 mkdir -p ${DOTFILES_DIR}
@@ -36,10 +36,10 @@ cd ${DOTFILES_DIR}
 git clone ${DOTFILES_REPO}
 
 # remove the .gitconfig so that dotfiles can symlink it
-if [[ -f "~/.gitconfig" ]];
+if [ -f "${HOME}/.gitconfig" ];
 then
-  echo "Moving ~/.gitconfig to ~/.gitconfig.bak.1"
-  mv ~/.gitconfig ~/.gitconfig.bak.1
+  echo "Moving ${HOME}/.gitconfig to ${HOME}/.gitconfig.bak.1"
+  mv ${HOME}/.gitconfig ${HOME}/.gitconfig.bak.1
 fi
 
 cd ${DOTFILES_DIR}/dotfiles
