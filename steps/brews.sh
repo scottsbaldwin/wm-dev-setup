@@ -1,7 +1,7 @@
 #!/bin/sh
 
 brew install git wget tmux proctools ack ctags-exuberant markdown reattach-to-user-namespace
-brew install imagemagick redis
+brew install imagemagick redis phantomjs
 
 # -----------------------------------------------------
 # database
